@@ -10,7 +10,7 @@ export function MovieDetails() {
     axios
       .get(`https://api.themoviedb.org/3/movie/${id}`, {
         params: {
-          api_key: 'TU_API_KEY',
+          api_key: 'c0ec3039a6ea9335ddc382eb1bd446f2',
         },
       })
       .then(response => {
