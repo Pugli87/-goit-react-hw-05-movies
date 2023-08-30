@@ -9,16 +9,17 @@ import { Error404 } from 'pages/error404/Error404';
 export const App = () => {
   return (
     <>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/movieId:" element={<MovieDetails />} />
-          <Route path="/*" element={<Error404 />}>
-            <Route path="cast" element={'<Cast />'} />
-            <Route path="reviews" element={'<Reviews />'} />
-          </Route>
-        </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/goit-react-hw-05-movies" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/movieId:" element={<MovieDetails />}>
+          <Route path="cast" element={'<Cast />'} />
+          <Route path="reviews" element={'<Reviews />'} />
+        </Route>
+        <Route path="/*" element={<Error404 />} />
+      </Routes>
     </>
   );
 };
