@@ -5,7 +5,16 @@ import {
   baseImgURL,
   defaultImg,
   fetchPopularMovies,
-} from '../../components/moviesApi/moviesApi'; // Importa la función desde el archivo api.js
+} from '../../components/moviesApi/moviesApi';
+import {
+  Title,
+  Contain,
+  Ul,
+  Li,
+  Img,
+  Cont,
+  P,
+} from '../../components/styled-component/HomeStyles';
 
 export function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -27,13 +36,13 @@ export function Home() {
 
   return (
     <>
-      <h1>Trending today</h1>
-      <div>
-        <ul>
+      <Contain>
+        <Title>Trending today</Title>
+        <Ul>
           {popularMovies.map(movie => (
-            <li key={movie.id}>
+            <Li key={movie.id}>
               <NavLink to={`/movies/${movie.id}`}>
-                <img
+                <Img
                   src={
                     movie?.backdrop_path
                       ? baseImgURL + movie?.backdrop_path
@@ -41,14 +50,14 @@ export function Home() {
                   }
                   alt={movie?.title || movie?.name}
                 />
-                <div>
-                  <p>{movie.title}</p>
-                </div>
+                <Cont>
+                  <P>{movie.title}</P>
+                </Cont>
               </NavLink>
-            </li>
+            </Li>
           ))}
-        </ul>
-      </div>
+        </Ul>
+      </Contain>
     </>
   );
 }

@@ -10,10 +10,26 @@ export const defaultImg = 'https://via.placeholder.com/300x450.png?text=Not+Foun
 export const fetchPopularMovies = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
-    return response.data.results;
+    //return response.data.results;
+    const limitedMovies = response.data.results.slice(0, 12);
+    return limitedMovies;
   } catch (error) {
     console.error(error);
     Notiflix.Notify.warning('Error fetching movies:', error);
     throw error;
   }
 };
+
+export const fetchMovieById = async (movieId) => {
+  try{
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`)
+    return response.data
+  }catch(error){
+    console.error(error);
+    Notiflix.Notify.warning('Error fetching movie by ID:', error);
+    throw error;
+  }
+
+};
+
+
