@@ -7,9 +7,12 @@ export const Title = styled.h1`
 export const Ul = styled.ul`
   margin: 0 auto;
   list-style: none;
-  display: flex;
+  /display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  /flex-wrap: wrap;
+  /gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 10px;
 `;
 

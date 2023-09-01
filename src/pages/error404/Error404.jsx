@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from 'styled-component/SectionStyles';
 
-export function Error404() {
+export default function Error404() {
   return (
     <Section>
       <h1>Error 404</h1>

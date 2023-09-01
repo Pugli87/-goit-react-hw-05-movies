@@ -1,7 +1,7 @@
 import { Section } from 'styled-component/SectionStyles';
 import { HeaderStyles, Link, Logo } from '../../styled-component/HeaderStyles';
 
-export function Header() {
+export default function Header() {
   return (
     <Section>
       <HeaderStyles>

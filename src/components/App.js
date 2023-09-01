@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { lazy } from "react";
 import { Routes, Route } from 'react-router-dom';
-import { Header } from './header/Header';
-//import { Home } from 'pages/home/Home';
-import { Movies } from 'pages/movies/Movies';
-import { MovieDetails } from 'pages/movieDetails/MovieDetails';
-import { Error404 } from 'pages/error404/Error404';
 
+const Header = lazy(() => import("../components/header/Header"));
 const Home = lazy(() => import("../pages/home/Home"));
+const Movies = lazy(() => import("../pages/movies/Movies"));
+const MovieDetails = lazy(() => import("../pages/movieDetails/MovieDetails"));
+const Cast = lazy(() => import("../components/cast/Cast"));
+const Reviews = lazy(() => import("../components/reviews/Reviews"));
+const Error404 = lazy(() => import("../pages/error404/Error404"));
 
 export const App = () => {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/goit-react-hw-05-movies" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/movieId:" element={<MovieDetails />}>
-          <Route path="cast" element={'<Cast />'} />
-          <Route path="reviews" element={'<Reviews />'} />
-        </Route>
-        <Route path="/*" element={<Error404 />} />
-      </Routes>
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/goit-react-hw-05-movies" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/movieId:" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="/*" element={<Error404 />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

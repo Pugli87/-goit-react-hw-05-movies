@@ -1,7 +1,7 @@
 import { Section } from 'styled-component/SectionStyles';
 import { Input, Button, Svg, Title } from '../../styled-component/MoviesStyled';
 
-export function Movies() {
+export default function Movies() {
   const submit = () => {
     console.log('click');
   };
