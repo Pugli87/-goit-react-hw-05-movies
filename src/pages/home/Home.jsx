@@ -6,17 +6,10 @@ import {
   defaultImg,
   fetchPopularMovies,
 } from '../../components/moviesApi/moviesApi';
-import {
-  Title,
-  Contain,
-  Ul,
-  Li,
-  Img,
-  Cont,
-  P,
-} from '../../components/styled-component/HomeStyles';
+import { Title, Ul, Li, Img, Cont, P } from '../../styled-component/HomeStyles';
+import { Section } from 'styled-component/SectionStyles';
 
-export function Home() {
+export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
 
   const getMovies = () => {
@@ -35,29 +28,27 @@ export function Home() {
   }, []);
 
   return (
-    <>
-      <Contain>
-        <Title>Trending today</Title>
-        <Ul>
-          {popularMovies.map(movie => (
-            <Li key={movie.id}>
-              <NavLink to={`/movies/${movie.id}`}>
-                <Img
-                  src={
-                    movie?.backdrop_path
-                      ? baseImgURL + movie?.backdrop_path
-                      : defaultImg
-                  }
-                  alt={movie?.title || movie?.name}
-                />
-                <Cont>
-                  <P>{movie.title}</P>
-                </Cont>
-              </NavLink>
-            </Li>
-          ))}
-        </Ul>
-      </Contain>
-    </>
+    <Section>
+      <Title>Trending today</Title>
+      <Ul>
+        {popularMovies.map(movie => (
+          <Li key={movie.id}>
+            <NavLink to={`/movies/${movie.id}`}>
+              <Img
+                src={
+                  movie?.backdrop_path
+                    ? baseImgURL + movie?.backdrop_path
+                    : defaultImg
+                }
+                alt={movie?.title || movie?.name}
+              />
+              <Cont>
+                <P>{movie.title}</P>
+              </Cont>
+            </NavLink>
+          </Li>
+        ))}
+      </Ul>
+    </Section>
   );
 }

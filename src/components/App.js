@@ -1,10 +1,13 @@
 import React from 'react';
+import { lazy } from "react";
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './header/Header';
-import { Home } from 'pages/home/Home';
+//import { Home } from 'pages/home/Home';
 import { Movies } from 'pages/movies/Movies';
 import { MovieDetails } from 'pages/movieDetails/MovieDetails';
 import { Error404 } from 'pages/error404/Error404';
+
+const Home = lazy(() => import("../pages/home/Home"));
 
 export const App = () => {
   return (

@@ -1,9 +1,5 @@
-import {
-  Input,
-  Button,
-  Cont,
-  Svg,
-} from '../../components/styled-component/MoviesStyled';
+import { Section } from 'styled-component/SectionStyles';
+import { Input, Button, Svg, Title } from '../../styled-component/MoviesStyled';
 
 export function Movies() {
   const submit = () => {
@@ -11,14 +7,15 @@ export function Movies() {
   };
 
   return (
-    <Cont>
+    <Section>
+      <Title>Movies</Title>
       <Input type="text" autoComplete="off" placeholder="Search movies" />
       <Button type="button" onClick={submit}>
         <Svg width="10px" height="10px" viewBox="0 0 1244.000000 1280.000000">
           <g
             transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-            fill="#fff"
-            stroke="none"
+            fill="rgb(2, 95, 189)"
+            stroke="transparent"
           >
             <path
               d="M4025 12789 c-1029 -79 -1969 -501 -2704 -1214 -985 -955 -1456
@@ -38,6 +35,6 @@ export function Movies() {
           </g>
         </Svg>
       </Button>
-    </Cont>
+    </Section>
   );
 }

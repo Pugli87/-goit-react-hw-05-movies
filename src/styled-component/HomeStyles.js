@@ -4,13 +4,6 @@ export const Title = styled.h1`
   padding: 10px 0
 `;
 
-export const Contain = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-`;
-
 export const Ul = styled.ul`
   margin: 0 auto;
   list-style: none;
@@ -25,17 +18,15 @@ export const Li = styled.li`
 `;
 
 export const Img = styled.img`
-
-height: 100%;
+  height: 100%;
   border-radius: 15px ;
-  `;
+`;
   
-  export const Cont = styled.div`
+export const Cont = styled.div`
   position: relative;
   top: -30px;
   border-radius: 0 0 15px 15px ;
   background-color: rgba(0, 0, 0, 0.6);
-
 `;
 
 export const P = styled.p`
