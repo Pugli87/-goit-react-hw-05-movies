@@ -6,7 +6,9 @@ export const Ul = styled.ul`
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
   gap: 10px;
 `;
 
