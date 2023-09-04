@@ -8,9 +8,10 @@ export const Ul = styled.ul`
   justify-content: center;
   //flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 10px;
-`;
+  `;
+  
 
 export const Li = styled.li`
   display: flex;
