@@ -30,36 +30,46 @@
 // }
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useParams, Outlet, Link } from 'react-router-dom';
+import { fetchPopularMovies } from 'components/moviesApi/moviesApi';
+import { Section } from 'styled-component/SectionStyles';
 
 export default function MovieDetails() {
-  const { id } = useParams();
+  const { movieId } = useParams();
+  console.log(movieId);
   const [movie, setMovie] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/${id}`, {
-        params: {
-          api_key: 'c0ec3039a6ea9335ddc382eb1bd446f2',
-        },
-      })
-      .then(response => {
-        setMovie(response.data);
+  const getMovies = () => {
+    fetchPopularMovies(movieId)
+      .then(results => {
+        setMovie(results);
+        console.log(results);
       })
       .catch(error => {
         console.error(error);
       });
-  }, [id]);
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, [movieId]);
 
   if (!movie) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
-    </div>
+    <Section>
+      <div className="flex items-center">
+        <button type="button">
+          <i className="ri-arrow-left-line"></i>
+          <Link to="/">Go Back</Link>
+        </button>
+      </div>
+      <div>
+        <h1>{movie.title}</h1>
+        <p>{movie.overview}</p>
+      </div>
+    </Section>
   );
 }

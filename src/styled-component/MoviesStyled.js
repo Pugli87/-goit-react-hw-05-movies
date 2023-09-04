@@ -15,9 +15,9 @@ export const Input = styled.input`
   &:focus {
     outline: 1px solid rgb(2, 95, 189);
   }
-  `;
+`;
   
-  export const Button = styled.button`
+export const Button = styled.button`
   padding: 5px 10px;
   position: relative;
   top: 4px;
@@ -25,11 +25,11 @@ export const Input = styled.input`
   cursor: pointer;
   border: none;
   background: transparent;
-  `;
+`;
   
-  export const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
+export const Svg = styled.svg`
+  width: 15px;
+  height: 15px;
 
 `;
 

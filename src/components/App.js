@@ -1,5 +1,4 @@
-import React, { Suspense } from 'react';
-import { lazy } from "react";
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 const Header = lazy(() => import("../components/header/Header"));

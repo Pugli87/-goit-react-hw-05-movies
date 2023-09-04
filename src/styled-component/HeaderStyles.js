@@ -15,15 +15,15 @@ export const HeaderStyles = styled.header`
 `;
 
 export const Logo = styled.div`
+  padding-left: 8px;
   display: flex;
   width: 100px;
   height: 45px;
-  padding: 8px;
   margin: 0;
 `;
 
 export const Link = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 4px 8px;
   border-radius: 4px;
   text-decoration: none;
   color: black;
