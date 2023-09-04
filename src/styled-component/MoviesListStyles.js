@@ -11,8 +11,6 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-width: 300px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 15px;

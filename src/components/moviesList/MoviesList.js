@@ -13,7 +13,7 @@ const MovieList = ({ movies }) => {
     <Section>
       <Ul>
         {movies.map(movie => (
-          <Li key={movie.id}>
+          movie.backdrop_path !== null && <Li key={movie.id}>
             <Nav to={`/movies/${movie.id}`}>
               <Img
                 src={

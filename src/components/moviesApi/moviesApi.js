@@ -11,7 +11,7 @@ export const fetchPopularMovies = async (movieId) => {
   try {
     const response = await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
     //return response.data.results;
-    const limitedMovies = response.data.results.slice(0, 12);
+    const limitedMovies = response.data.results.slice(0, 20);
     return limitedMovies;
   } catch (error) {
     console.error(error);
@@ -25,7 +25,7 @@ export const searchMovies = async (query) => {
     const response = await axios.get(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
     );
-    const limitedMovies = response.data.results.slice(0, 12);
+    const limitedMovies = response.data.results.slice(0, 20);
     return limitedMovies;
   } catch (error) {
     console.error(error);

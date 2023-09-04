@@ -5,11 +5,11 @@ import { Button, Input, Svg, Title } from 'styled-component/MoviesStyled';
 import MovieList from 'components/moviesList/MoviesList';
 
 const Movies = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async () => {
-    searchMovies(searchQuery)
+    searchMovies(query)
       .then(results => {
         setSearchResults(results);
       })
@@ -27,8 +27,8 @@ const Movies = () => {
         <Input
           className="input"
           type="text"
-          value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
+          value={query}
+          onChange={e => setQuery(e.target.value)}
         />
         <Button type="button" onClick={handleSearch}>
           <Svg width="10px" height="10px" viewBox="0 0 1244.000000 1280.000000">
