@@ -9,10 +9,9 @@ export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
 
   const getMovies = () => {
-    fetchPopularMovies('popular')
+    fetchPopularMovies()
       .then(results => {
         setPopularMovies(results);
-        console.log(results);
       })
       .catch(error => {
         console.error(error);
