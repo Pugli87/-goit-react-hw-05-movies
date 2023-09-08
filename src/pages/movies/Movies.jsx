@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { movieById, searchMovies } from '../../components/moviesApi/moviesApi';
+import { searchMovies } from '../../components/moviesApi/moviesApi';
 import { Section } from 'styled-component/SectionStyles';
 import { Button, Input, Svg, Title } from 'styled-component/MoviesStyled';
 import MovieList from 'components/moviesList/MoviesList';
