@@ -7,9 +7,9 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 export const baseImgURL = "https://image.tmdb.org/t/p/w300/"
 export const defaultImg = 'https://via.placeholder.com/300x200/ccc/333?text=Not+Found+Image';
 
-export const fetchPopularMovies = async (movieId) => {
+export const fetchPopularMovies = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
+    const response = await axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
     //return response.data.results;
     const limitedMovies = response.data.results.slice(0, 20);
     return limitedMovies;
@@ -33,3 +33,15 @@ export const searchMovies = async (query) => {
     throw error;
   }
 };
+
+export const movieById = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
+      
+    );
+    return response.data
+  } catch (error) {
+    console.log(error);
+  }
+} 
