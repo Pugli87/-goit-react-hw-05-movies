@@ -56,3 +56,17 @@ export const movieByCast = async (id) => {
     console.log(error);
   }
 } 
+
+/*
+export const movieByCast = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
+    );
+    return response.data.cast
+    console.log(response.data.cast);
+  } catch (error) {
+    console.log(error);
+  }
+} 
+*/
