@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPopularMovies } from '../../components/moviesApi/moviesApi';
 import { Title } from '../../styled-component/HomeStyles';
-import { Section } from 'styled-component/SectionStyles';
 import MovieList from '../../components/moviesList/MoviesList'; // Importa el componente MovieList
 
 export default function Home() {
@@ -23,9 +22,9 @@ export default function Home() {
   }, []);
 
   return (
-    <Section>
+    <>
       <Title>Trending today</Title>
-      <MovieList movies={popularMovies} /> {/* Usa el componente MovieList */}
-    </Section>
+      <MovieList movies={popularMovies} />
+    </>
   );
 }

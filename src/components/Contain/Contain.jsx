@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Section = ({ children }) => {
+export const Contain = ({ children }) => {
   return (
-    <Section>
+    <Contain>
       {/*{title ? <h1 className={`${classNameText}`}>{title}</h1> : null}*/}
       {children}
-    </Section>
+    </Contain>
   );
 };
 
-Section.propTypes = {
+Contain.propTypes = {
   children: PropTypes.node,
 };

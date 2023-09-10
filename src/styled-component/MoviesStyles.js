@@ -1,14 +1,24 @@
 import styled from 'styled-components';
 
-export const Title = styled.h2`
-  text-align: center;
+
+export const Wrapper = styled.div`
+  width: 100%;
 `;
 
+export const Title = styled.h2`
+  //display: none;
+  //text-align: center;
+`;
+
+export const Form = styled.form`
+  width: 240px;
+  display: flex; 
+`;
 
 export const Input = styled.input`
+  //margin: 0 auto;
   padding: 8px;
   width: 240px;
-  margin-top: 10px;
   border: 1px solid rgb(2, 95, 189);
   background-color: transparent;
   border-radius: 5px;
@@ -18,10 +28,12 @@ export const Input = styled.input`
 `;
   
 export const Button = styled.button`
-  padding: 5px 10px;
+
+position: absolute;
+  padding: 7px 10px;
   position: relative;
-  top: 4px;
-  right: 40px;
+  top: 2px;
+  right: 36px;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -30,7 +42,6 @@ export const Button = styled.button`
 export const Svg = styled.svg`
   width: 15px;
   height: 15px;
-
 `;
 
 
