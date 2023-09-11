@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, /*Outlet,*/ Link } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import {
   baseImgURL,
   defaultImg,
@@ -17,6 +17,9 @@ import {
   Wrapper,
   H3,
   Button,
+  Link,
+  ContDetails,
+  UlDetails,
 } from 'styled-component/MovieDetailsStyles';
 import { Cont } from 'styled-component/ContainStyles';
 
@@ -24,7 +27,6 @@ export default function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
-  // Utiliza useCallback para crear la función getMovies
   const getMovies = useCallback(() => {
     movieById(movieId)
       .then(data => {
@@ -34,7 +36,7 @@ export default function MovieDetails() {
       .catch(error => {
         console.error(error);
       });
-  }, [movieId]); // Agrega movieId como dependencia
+  }, [movieId]);
 
   useEffect(() => {
     getMovies();
@@ -77,16 +79,18 @@ export default function MovieDetails() {
         </ContText>
       </Wrapper>
       {/* {movie.poster_path ? ( */}
-      <Paragraph>Additional information</Paragraph>
-      <Ul>
-        <Li>
-          {' '}
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        </Li>
-        <Li>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-        </Li>
-      </Ul>
+      <ContDetails>
+        <H4>Additional information</H4>
+        <UlDetails>
+          <Li>
+            <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+          </Li>
+          <Li>
+            <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+          </Li>
+        </UlDetails>
+      </ContDetails>
+      <Outlet />
       {/* ) : null} */}
     </Cont>
   );

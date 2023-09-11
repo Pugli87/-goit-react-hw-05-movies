@@ -45,28 +45,27 @@ export const movieById = async (id) => {
   }
 } 
 
-export const movieByCast = async (id) => {
+export const movieByCast = async (movieId) => {
   try {
     const response = await axios.get(
-      `${BASE_URL}/movie/${id}/credits?language=en-US?api_key=${API_KEY}`
+      `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
     );
-    return response.data
-    console.log(response.data.cast);
+    const cast = response.data.cast;
+    return cast
+  } catch (error) {
+    console.log(error);
+  }
+} 
+export const movieByReviews = async (movieId) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`
+    );
+    const reviews = response.data.results;
+    console.log(reviews);
+    return reviews
   } catch (error) {
     console.log(error);
   }
 } 
 
-/*
-export const movieByCast = async (id) => {
-  try {
-    const response = await axios.get(
-      `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
-    );
-    return response.data.cast
-    console.log(response.data.cast);
-  } catch (error) {
-    console.log(error);
-  }
-} 
-*/

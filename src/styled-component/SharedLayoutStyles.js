@@ -40,6 +40,7 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: white;
+    text-decoration: underline;
     background-color: rgb(2, 95, 189);
   }
 

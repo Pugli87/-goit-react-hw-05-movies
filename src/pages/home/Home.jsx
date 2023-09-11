@@ -1,8 +1,7 @@
-// Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchPopularMovies } from '../../components/moviesApi/moviesApi';
 import { Title } from '../../styled-component/HomeStyles';
-import MovieList from '../../components/moviesList/MoviesList'; // Importa el componente MovieList
+import MovieList from '../../components/moviesList/MoviesList';
 
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);

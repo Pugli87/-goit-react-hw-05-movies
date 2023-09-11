@@ -23,7 +23,6 @@ export const Contain = styled.div`
 
 export const Cont = styled.div`
   padding: 10px;
-  padding-top: 0;
 
   @media (min-width: 650px) {
     padding: 20px ;

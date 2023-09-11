@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Contain = ({ children }) => {
-  return (
-    <Contain>
-      {/*{title ? <h1 className={`${classNameText}`}>{title}</h1> : null}*/}
-      {children}
-    </Contain>
-  );
+  return <Contain>{children}</Contain>;
 };
 
 Contain.propTypes = {
