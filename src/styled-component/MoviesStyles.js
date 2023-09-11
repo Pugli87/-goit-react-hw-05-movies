@@ -10,8 +10,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  //display: none;
-  //text-align: center;
+  margin-bottom: 10px;
+  
+  @media (min-width: 650px) {
+    margin-bottom: 20px;
+  }
+  
 `;
 
 export const Form = styled.form`

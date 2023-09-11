@@ -21,6 +21,9 @@ const Movies = () => {
       .then(results => {
         setSearchResults(results);
         setQuery('');
+
+        // Modifica la URL con el parámetro de búsqueda
+        window.history.pushState({}, '', `?query=${encodeURIComponent(query)}`);
       })
       .catch(error => {
         console.error('Error searching movies:', error);
@@ -31,7 +34,7 @@ const Movies = () => {
     <>
       <Cont>
         <Wrapper>
-          <Title hidden>Search Movies</Title>
+          <Title>Search Movies</Title>
           <Form>
             <Input
               type="text"

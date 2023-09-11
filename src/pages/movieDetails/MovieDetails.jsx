@@ -48,7 +48,7 @@ export default function MovieDetails() {
     <Cont>
       <div>
         <Button type="Button">
-          <Link to="/">&lArr; Go Back</Link>
+          <Link to="/movies">&lArr; Go Back</Link>
         </Button>
       </div>
       <Wrapper>

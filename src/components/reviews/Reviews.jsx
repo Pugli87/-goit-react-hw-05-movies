@@ -25,7 +25,6 @@ export default function Reviews() {
   if (reviews?.length === 0) {
     return <p>No hay Reviews disponibles.</p>;
   }
-
   return (
     <Cont>
       <h2 hidden>Reviews</h2>
