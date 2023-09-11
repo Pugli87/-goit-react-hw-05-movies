@@ -10,7 +10,7 @@ export default function SharedLayout() {
   return (
     <>
       <Header>
-        <Logo>
+        <Logo to="/">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273.42 35.52">
             <defs>
               <linearGradient

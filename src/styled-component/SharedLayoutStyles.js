@@ -21,7 +21,8 @@ export const Header = styled.header`
   }
   `;
   
-  export const Logo = styled.div`
+  export const Logo = styled(NavLink)`
+  cursor: pointer;
   display: flex;
   width: 100px;
   margin: 0;
