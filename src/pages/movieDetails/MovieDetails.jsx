@@ -31,7 +31,6 @@ export default function MovieDetails() {
     movieById(movieId)
       .then(data => {
         setMovie(data);
-        console.log(data);
       })
       .catch(error => {
         console.error(error);

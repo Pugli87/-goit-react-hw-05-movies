@@ -62,7 +62,6 @@ export const movieByReviews = async (movieId) => {
       `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`
     );
     const reviews = response.data.results;
-    console.log(reviews);
     return reviews
   } catch (error) {
     console.log(error);

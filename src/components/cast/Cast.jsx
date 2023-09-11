@@ -7,18 +7,19 @@ import {
 } from '../../components/moviesApi/moviesApi';
 import { ContP, Img, Li, P, Ul } from 'styled-component/CastStyles';
 
-const Cast = () => {
+export default function Cast() {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
+  const getCastData = async () => {
+    try {
+      const castData = await movieByCast(movieId);
+      setCast(castData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    const getCastData = async () => {
-      try {
-        const castData = await movieByCast(movieId);
-        setCast(castData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     getCastData();
   }, [movieId]);
 
@@ -45,5 +46,4 @@ const Cast = () => {
       </Ul>
     </div>
   );
-};
-export default Cast;
+}
