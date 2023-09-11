@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Contain = styled.div`
   padding: 10px;
+  padding-top: 0;
   min-width: 320px;
   text-align: center;
   max-width: 450px;

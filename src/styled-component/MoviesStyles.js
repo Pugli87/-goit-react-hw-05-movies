@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Title = styled.h2`
@@ -13,6 +17,7 @@ export const Title = styled.h2`
 export const Form = styled.form`
   width: 240px;
   display: flex; 
+  position: relative;
 `;
 
 export const Input = styled.input`
@@ -29,11 +34,9 @@ export const Input = styled.input`
   
 export const Button = styled.button`
 
-position: absolute;
+  position: absolute;
   padding: 7px 10px;
-  position: relative;
-  top: 2px;
-  right: 36px;
+  right: 0;
   cursor: pointer;
   border: none;
   background: transparent;

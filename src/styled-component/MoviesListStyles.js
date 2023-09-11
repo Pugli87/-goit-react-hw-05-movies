@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Ul = styled.ul`
   padding: 10px;
-  margin: 0 auto;
+  margin: 20px auto;
   list-style: none;
   //display: grid;
   display: flex;
