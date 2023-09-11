@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Contain } from 'styled-component/ContainStyles';
 
-const Header = lazy(() => import("../components/header/Header"));
+const SharedLayout = lazy(() => import("./header/SharedLayout"));
 const Home = lazy(() => import("../pages/home/Home"));
 const Movies = lazy(() => import("../pages/movies/Movies"));
 const MovieDetails = lazy(() => import("../pages/movieDetails/MovieDetails"));
@@ -14,10 +14,10 @@ export const App = () => {
   return (
     <Contain>
       <Suspense fallback={<div>Loading subpage...</div>}>
-        <Header />
+        <SharedLayout /> 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route index element={<Home />} />
+          <Route path="/" element={<SharedLayout />} />
+          <Route index element={<Home />} /> 
           {/* <Route path="goit-react-hw-05-movies" element={<Home />} /> */}
           <Route path="movies" element={<Movies />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
