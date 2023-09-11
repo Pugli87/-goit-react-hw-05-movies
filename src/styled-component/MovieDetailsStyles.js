@@ -125,7 +125,7 @@ text-decoration: none;
 color: black;
 
 &.active {
-    padding: 1px 15px;
+    padding: 5px 15px;
     text-decoration: underline;
     color: white;
     background-color: rgb(2, 95, 189);
