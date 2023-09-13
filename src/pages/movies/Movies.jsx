@@ -15,8 +15,8 @@ const Movies = () => {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = async evt => {
-    evt.preventDefault();
+  const handleSearch = async e => {
+    e.preventDefault();
     searchMovies(query)
       .then(results => {
         setSearchResults(results);
@@ -31,30 +31,29 @@ const Movies = () => {
   };
 
   return (
-    <>
-      <Cont>
-        <Wrapper>
-          <Title>Search Movies</Title>
-          <Form>
-            <Input
-              type="text"
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-              placeholder="Search Movies"
-            />
-            <Button type="submit" onClick={handleSearch}>
-              <Svg
-                width="10px"
-                height="10px"
-                viewBox="0 0 1244.000000 1280.000000"
+    <Cont>
+      <Wrapper>
+        <Title>Search Movies</Title>
+        <Form>
+          <Input
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder="Search Movies"
+          />
+          <Button type="submit" onClick={handleSearch}>
+            <Svg
+              width="10px"
+              height="10px"
+              viewBox="0 0 1244.000000 1280.000000"
+            >
+              <g
+                transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                fill="rgb(2, 95, 189)"
+                stroke="transparent"
               >
-                <g
-                  transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-                  fill="rgb(2, 95, 189)"
-                  stroke="transparent"
-                >
-                  <path
-                    d="M4025 12789 c-1029 -79 -1969 -501 -2704 -1214 -985 -955 -1456
+                <path
+                  d="M4025 12789 c-1029 -79 -1969 -501 -2704 -1214 -985 -955 -1456
                     -2292 -1285 -3650 156 -1244 849 -2360 1899 -3059 193 -129 272 -175 470 -274
                     452 -227 906 -362 1445 -429 207 -25 763 -25 970 0 404 50 752 138 1115 281
                     251 98 600 283 819 433 l80 54 1075 -1073 c3835 -3827 3770 -3762 3828 -3795
@@ -67,15 +66,14 @@ const Movies = () => {
                     -964 -549 -2153 -590 -3152 -108 -975 470 -1667 1364 -1873 2420 -37 192 -51
                     323 -57 555 -6 258 4 423 42 651 161 971 742 1831 1588 2348 453 278 935 434
                     1512 490 22 2 164 3 315 1 217 -3 304 -8 415 -25z"
-                  />
-                </g>
-              </Svg>
-            </Button>
-          </Form>
-          <MovieList movies={searchResults} />
-        </Wrapper>
-      </Cont>
-    </>
+                />
+              </g>
+            </Svg>
+          </Button>
+        </Form>
+        <MovieList movies={searchResults} />
+      </Wrapper>
+    </Cont>
   );
 };
 

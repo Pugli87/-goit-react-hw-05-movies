@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom';
 import {
   Header,
   Link,
@@ -39,7 +38,6 @@ export default function SharedLayout() {
           <Link to="/movies">Movies</Link>
         </Nav>
       </Header>
-      <Outlet />
     </>
   );
 }

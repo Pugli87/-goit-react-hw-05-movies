@@ -48,7 +48,7 @@ export default function MovieDetails() {
     <Cont>
       <div>
         <Button type="Button">
-          <Link to="/movies">&lArr; Go Back</Link>
+          <Link to="/">&lArr; Go Back</Link>
         </Button>
       </div>
       <Wrapper>
@@ -82,10 +82,10 @@ export default function MovieDetails() {
         <H4>Additional information</H4>
         <UlDetails>
           <Li>
-            <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+            <Link to={`cast`}>Cast</Link>
           </Li>
           <Li>
-            <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+            <Link to={`reviews`}>Reviews</Link>
           </Li>
         </UlDetails>
       </ContDetails>
